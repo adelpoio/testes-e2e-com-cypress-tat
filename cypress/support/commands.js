@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+// eslint-disable-next-line no-unused-vars
 import { faker } from '@faker-js/faker/locale/en'
 
 Cypress.Commands.add('fillSignUpFormAndSubmit', (email, password) =>{

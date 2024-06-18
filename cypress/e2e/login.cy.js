@@ -1,3 +1,5 @@
+/*global describe, it, cy*/
+
 describe('Login', () => {
     it('successfully logs in', () => {
     cy.guiLogin()

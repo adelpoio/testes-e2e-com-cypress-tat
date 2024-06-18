@@ -1,4 +1,7 @@
+/*global describe, it, cy, Cypress,*/
+ 
 import { faker } from '@faker-js/faker/locale/en'
+// eslint-disable-next-line no-unused-vars
 import { log } from 'mochawesome/src/utils'
 
 
