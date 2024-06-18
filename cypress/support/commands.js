@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-unused-vars
 import { faker } from '@faker-js/faker/locale/en'
-
 Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
   cy.intercept('GET', '**/notes').as('getNotes')
   cy.visit('/signup')
@@ -31,8 +30,11 @@ Cypress.Commands.add('guiLogin', (
   cy.contains('h1', 'Your Notes').should('be.visible')
 })
 
-Cypress.Commands.add('sessionLogin', (username = Cypress.env('USER_EMAIL'), password = Cypress.env('USER_PASSWORD')) => {
-  const login = () => {cy.guiLogin(username, password)}
+Cypress.Commands.add('sessionLogin', (
+  username = Cypress.env('USER_EMAIL'),
+  password = Cypress.env('USER_PASSWORD')
+) => {
+  const login = () => cy.guiLogin(username, password)
   cy.session(username, login)
 })
 
