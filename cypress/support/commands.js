@@ -31,11 +31,8 @@ Cypress.Commands.add('guiLogin', (
   cy.contains('h1', 'Your Notes').should('be.visible')
 })
 
-Cypress.Commands.add('sessionLogin', (
-  username = Cypress.env('USER_EMAIL'),
-  password = Cypress.env('USER_PASSWORD')
-) => {
-  const login = () => cy.guiLogin(username, password)
+Cypress.Commands.add('sessionLogin', (username = Cypress.env('USER_EMAIL'), password = Cypress.env('USER_PASSWORD')) => {
+  const login = () => {cy.guiLogin(username, password)}
   cy.session(username, login)
 })
 
